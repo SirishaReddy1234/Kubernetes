@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: pythonapp
+spec:
+  containers:
+  - name: my-container
+    image: sirisha1202/pythonimage1
+    ports:
+    - containerPort: 80
