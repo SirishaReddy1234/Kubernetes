@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: example-pod
+spec:
+  containers:
+  - name: container
+    image: nginx
+    ports:
+    - containerPort: 80
+    livenessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 15
+      periodSeconds: 15
+    readinessProbe:
+      httpGet:
+        path: /index.html
+        port: 80
+      initialDelaySeconds: 5
+      periodSeconds: 10
